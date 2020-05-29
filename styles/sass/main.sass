@@ -1,0 +1,479 @@
+*
+  padding: 0
+  margin: 0
+  user-select: none
+
+body
+  top: 20%
+  display: flex
+  position: absolute
+  width: 100vw
+  justify-content: center
+  align-items: center
+  color: #222
+  font-family: arial,sans-serif
+  @media screen and (max-width: 576px)
+    display: -webkit-box
+
+li
+  list-style: none
+
+a
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+.container
+  width: 480px
+  @media screen and (max-width: 576px)
+    padding: 0 15px
+    width: calc( 100% - 30px )
+
+
+.apps-popup
+  position: absolute
+  display: none
+  top: 0px
+  right: 0px
+  width: 340px
+  height: 468px
+  margin-top: 40px
+  margin-right: 27px
+  padding: 3px 6px 9px
+  box-sizing: border-box
+  overflow: hidden
+  z-index: 999
+  @media screen and (max-width: 420px)
+    width: 240px
+  .iframe
+    position: relative
+    display: block
+    height: 100% 
+    width: 100%
+    border: 1px solid rgba(0,0,0,0.2)
+    border-radius: 8px
+    background: #fff
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.30), 0 2px 6px 2px rgba(60,64,67,.15)
+    overflow-x: hidden
+    overflow-y: auto
+    &::-webkit-scrollbar
+      width: 10px
+      background-color: #fff
+      border-radius: 25px
+    &::-webkit-scrollbar-thumb
+      background-color: #DADCE0
+      border-radius: 25px
+
+    ul
+      display: flex
+      flex-wrap: wrap
+      width: 100%
+      padding: 17px 0 20px 12px
+      li
+        position: relative
+        display: inline-block
+        width: 86px
+        height: 98px
+        padding: 1px 7px 1px 7px
+        text-align: center
+        cursor: pointer
+        &:hover
+          background-color: #f6fafe
+          border-radius: 8px
+
+    .s-logo 
+      background-image: url(https://ssl.gstatic.com/gb/images/p1_6269e604.png)
+      background-size: 64px 2824px
+      height: 64px
+      width: 64px
+      display: inline-block
+
+.accounts-popup
+  position: absolute
+  display: none
+  right: 0
+  top: 44px
+  width: 354px
+  max-height: calc(100vh - 44px - 115px)
+  color: #000
+  background: #fff
+  border-radius: 8px
+  border: 1px solid #ccc
+  border-color: rgba(0,0,0,.2)
+  box-shadow: 0 2px 10px rgba(0,0,0,.2)
+  overflow-y: auto
+  overflow-x: hidden
+  outline: none
+  @media screen and (max-width: 420px)
+    width: calc( 100vw - 60px )
+  .btop
+    border-top: 1px solid #e8eaed
+  .person
+    margin: 20px 33px
+    text-align: center
+    .logo
+      margin: 0 auto
+      height: 80px
+      width: 80px
+      background-image: url(https://lh3.googleusercontent.com/ogw/ADGmqu92ChbeXDrwDxGcmEJRy5kP-LVN-L1tWt4GC2Ew=s83-c-mo)
+    &-info
+      .nickname
+        color: #202124
+        font: 500 16px/22px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+        letter-spacing: .29px
+        margin: 0
+        text-overflow: ellipsis
+        overflow: hidden
+      .email
+        color: #5f6368
+        font: 400 14px/19px Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+        letter-spacing: normal
+        text-overflow: ellipsis
+        overflow: hidden
+      a
+        margin-top: 16px
+        border: 1px solid #dadce0
+        border-radius: 100px
+        color: #3c4043
+        display: inline-block
+        font: 500 14px/16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+        letter-spacing: .25px
+        margin: 16px 0 0
+        max-width: 254px
+        padding: 8px 16px
+        text-decoration: none
+        text-overflow: ellipsis
+        overflow: hidden
+        &:hover
+          background-color: #f7f8f8
+          text-decoration: none
+  .person-accounts
+    a
+      display: flex
+      border: none
+      cursor: pointer
+      height: 35px
+      outline: 0
+      padding: 12px 33px 13px
+      text-decoration: none
+      &:hover
+        background-color: #f7f8f8
+      img
+        border: none
+        vertical-align: top
+        height: 32px
+        width: 32px
+        border-radius: 50%
+        overflow: hidden
+        margin-right: 12px
+      .item-info
+        .name
+          color: #3c4043
+          font: 500 14px/18px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+          letter-spacing: .25px
+        .email
+          color: #5f6368
+          font: 400 12px / 16px Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+    .one-more
+      justify-content: center
+      align-items: center
+      color: #3c4043
+      font: 500 14px/18px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+      svg
+        opacity: .7
+        margin-right: 10px
+  .logout
+    text-align: center
+    a
+      border: 1px solid #dadce0
+      border-radius: 4px
+      display: inline-block
+      font: 500 14px/16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+      letter-spacing: .15px
+      margin: 16px 0
+      padding: 10px 24px
+      color: #3c4043
+      &:hover
+        background-color: #f7f8f8
+        text-decoration: none
+  .privacy
+    color: #5f6368
+    padding: 14px 0
+    text-align: center
+    a
+      border-radius: 4px
+      color: #5f6368
+      display: inline-block
+      font: 400 12px / 16px Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+      padding: 4px 8px
+      text-decoration: none
+      &:hover
+        background-color: #f7f8f8
+        text-decoration: none
+
+nav
+  display: block
+  position: fixed
+  right: 0
+  top: 15px
+  font-size: 13px
+  z-index: 9999
+  a
+    color: rgba(0,0,0,0.87)
+  ul
+    display: flex
+    padding: 0 30px
+    align-items: center
+    li
+      padding-left: 15px
+      &:first-child
+        padding-left: 0 
+    img
+      height: 30px
+      width: 30px
+    .apps,
+    .accounts img
+      cursor: pointer
+    .accounts
+      position: relative
+
+    svg
+      color: rgba(0,0,0,0.6)
+      &:hover
+        color: rgba(0,0,0,0.9)
+    
+
+#content
+  top: -300px
+  @media screen and (max-width: 576px)
+    width: 100%
+  .icon
+    height: 24px
+    width: 24px
+  .logo
+    text-align: center
+    margin-bottom: 30px
+  form
+    position: relative
+    width: 100%
+
+    .active
+      border-radius: 24px 24px 0 0
+      box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28) !important
+      border-color: rgba(223,225,229,0) !important
+    .disable
+      border-radius: 24px
+
+    .input-box
+      display: flex
+      height: 44px
+      margin: 0 auto
+      padding: 0px 8px 0 14px
+      align-items: center
+      box-shadow: none
+      background: #fff
+      border: 1px solid #dfe1e5
+      z-index: 3
+      &:hover
+        box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28)
+        border-color: rgba(223,225,229,0)
+      .search-keywords
+        position: relative
+        flex-grow: 1
+        height: 100%
+      input
+        height: 100%
+        width: 100%
+        border: none
+        outline: none
+        font: 16px arial,sans-serif
+      .search
+        margin-right: 15px
+        opacity: .4
+      .tooltiptext 
+        position: absolute
+        top: 160%
+        padding: 7px
+        width: max-content
+        color: #fff
+        font-size: 11px
+        font-weight: 600
+        text-align: center
+        background-color: #000
+        visibility: hidden
+        &::after
+          content: ""
+          position: absolute
+          bottom: 100%
+          left: 50%
+          margin-left: -5px
+          border-width: 5px
+          border-style: solid
+          border-color: transparent transparent black transparent
+      .keyboard
+        position: relative
+        fill: #80868b
+        cursor: pointer
+        .tooltiptext
+          margin-left: -78px
+        &:hover
+          .tooltiptext
+            visibility: visible
+      .voice
+        position: relative
+        padding: 0 8px
+        cursor: pointer
+        .tooltiptext
+          margin-left: -66px
+        &:hover
+          .tooltiptext
+            visibility: visible
+      .actions-toggle
+        position: absolute
+        display: none
+        right: 20px
+        top: 0
+        height: 100%
+        align-items: center
+        .crosshair
+          fill: #80868b
+          margin-right: 12px
+          cursor: pointer
+        .vhr
+          border-left: 1px solid #dfe1e5
+          height: 65%
+
+    .form-actions
+      margin: 25px 0
+      text-align: center
+      input
+        background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1)
+        border: 1px solid #f2f2f2
+        border-radius: 4px
+        color: #5F6368
+        font-size: 14px
+        margin: 11px 4px
+        padding: 0 16px
+        line-height: 27px
+        height: 36px
+        min-width: 54px
+        text-align: center
+        cursor: pointer
+        outline: none
+        &:hover
+          box-shadow: 0 1px 1px rgba(0,0,0,0.1)
+          background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1)
+          background-color: #f8f8f8
+          border: 1px solid #c6c6c6
+          color: #222
+
+    .input-res
+      display: none
+      width: 100%
+      position: absolute
+      margin-top: -1px
+      z-index: 3
+      .res-container
+        background: #fff
+        display: flex
+        flex-direction: column
+        list-style-type: none
+        margin: 0
+        padding: 0
+        box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08)
+        border: 0
+        border-radius: 0 0 24px 24px
+        box-shadow: 0 4px 6px 0 rgba(32,33,36,0.28)
+        padding-bottom: 15px
+        overflow: hidden
+      
+      .chr
+        border-top: 1px solid #e8eaed
+        margin: 0 20px 0 14px
+        padding-bottom: 4px
+
+      ul
+        flex-grow: 1
+        li
+          padding: 0 20px 0 16px
+          &:hover
+            background: #eee
+          .sbic
+            height: 24px
+            width: 24px
+            padding-right: 14px
+            opacity: .4
+          .suggestions-inner-container
+            flex: auto
+            display: flex
+            align-items: center
+          .sbtc
+            display: flex
+            flex: auto
+            flex-direction: column
+            min-width: 0
+            padding: 6px 0
+          .sbl1
+            display: flex
+            font-size: 16px
+            color: #212121
+            flex: auto
+            align-items: center
+            word-break: break-word
+            padding-right: 8px
+      .form-actions
+        margin: 0
+      .complain
+        font-size: 8pt
+        margin-top: -16px
+        position: absolute
+        bottom: 5px
+        right: 16px
+        color: #70757a
+        float: right
+        font-style: italic
+
+  .languages
+    font-size: small
+    color: #222
+    line-height: 28px
+    text-align: center  
+    a
+      color: #1a0dab
+
+
+footer
+  left: 0
+  bottom: 0
+  display: block
+  position: fixed
+  padding: 0 30px
+  width: calc(100% - 60px)
+  color: rgba(0,0,0,.54)
+  font-size: 15px
+  line-height: 40px
+  background: #f2f2f2
+  border-top: 1px solid #e4e4e4
+  a
+    color: #5f6368
+  .country
+    border-bottom: 1px solid #e4e4e4
+  .fbar
+    display: flex
+    justify-content: space-between
+    @media screen and (max-width: 992px)
+      flex-direction: column-reverse
+      align-items: center
+    @media screen and (max-width: 768px)
+      ul:first-child
+        li:nth-child(4)
+          display: none
+    @media screen and (max-width: 576px)
+      font-size: 13px
+    span
+      ul
+        display: flex
+        li
+          padding-left: 27px
+          &:first-child
+            padding-left: 0 
